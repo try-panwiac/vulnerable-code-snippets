@@ -20,7 +20,7 @@ def RequestImage(url):
     if (URLCheck in lst_local) and (protocol in lst_proto):
         return b""
         
-    res = requests.get(url)
+    res = requests.get( url )
 
     return res.content
 
