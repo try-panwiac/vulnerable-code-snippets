@@ -20,13 +20,14 @@ func main() {
 		Role     *http.Cookie
 	}
 
+	
 	http.HandleFunc("/admin",
 		func(w http.ResponseWriter, r *http.Request) {
 			
       			//Client checks:
 			h := &Headers{}
 			h.Role, _ = r.Cookie("role")
-			h.ClientIP = r.Header.Get("X-Forwarded-For")
+			h.ClientIP = r.Header.Get("X-Forwarded-For") //Foo
 
 			//Render HTML
 			fmt.Fprintln(w, html())
